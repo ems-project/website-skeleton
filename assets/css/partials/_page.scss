@@ -1,0 +1,146 @@
+.page-header-img,
+.page-header-profile,
+.page-teaser,
+.jumbotron {
+  margin-left: -$default-padding;
+  margin-right: -$default-padding;
+  @include media-breakpoint-up(lg) {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+.page-header-img {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  .banner {
+    display: block;
+    order: 1;
+    @include media-breakpoint-up(md) {
+      padding: 0 42px 45px;
+    }
+  }
+  h1 {
+    min-height: 70px;
+    margin: 0;
+    color: $white;
+    background-color: $primary;
+    text-align: left;
+    z-index: 10;
+    padding: $default-padding;
+    width: 100%;
+    order: 2;
+    @include media-breakpoint-up(md) {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: auto;
+      max-width: 50%;
+      padding: 0.75em;
+    }
+  }
+  @include media-breakpoint-up(md) {
+    + .row {
+      .page-teaser {
+        margin-top: -45px;
+        padding: 80px 30px 30px;
+      }
+    }
+  }
+}
+.page-teaser {
+  a {
+    color: $body-color;
+    text-decoration: underline;
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}
+.page-toc {
+  padding-top: 2.5rem;
+  padding-bottom: 1rem;
+  margin-bottom: 0;
+  h2 {
+    margin-bottom: 1rem;
+  }
+  #toc {
+    ul {
+      li {
+        color: $primary;
+        &:before {
+          content: ' • ';
+        }
+        ul {
+          margin-top: em(6);
+          margin-bottom: 0;
+        }
+        a {
+          text-decoration: underline;
+          &:hover {
+            text-decoration: none;
+          }
+        }
+      }
+    }
+  }
+}
+.page-body {
+  padding: 1.5rem 0 0;
+  @include media-breakpoint-up(sm) {
+    padding: 2rem 0 0;
+  }
+  @include media-breakpoint-up(lg) {
+    padding: 2.5rem 0;
+  }
+  h2:not(:first-of-type) {
+    margin-top: em(50,28);
+    margin-bottom: em(20,28);
+  }
+  h3 {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+  }
+  a {
+    color: $body-color;
+    text-decoration: underline;
+    &:hover {
+      text-decoration: none;
+    }
+  }
+  img:not(.img-fluid) {
+    max-width: 100%;
+    height: auto;
+  }
+  iframe:not(.embed-responsive-item) {
+    max-width: 100%;
+    margin-bottom: 2rem;
+  }
+  .embed-responsive {
+    margin-bottom: 2rem;
+  }
+}
+
+.page-links {
+  border-top: 1px solid $gray-300;
+  margin-top: 2.5rem;
+  padding-top: 2.5rem;
+  li {
+    color: $primary;
+    a {
+      color: $primary;
+      text-decoration: none;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}
+.page-simple {
+  h1 {
+    color: $primary;
+  }
+  h2 {
+    color: $body-color;
+  }
+}

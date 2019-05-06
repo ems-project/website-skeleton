@@ -1,0 +1,23 @@
+.site-header {
+  padding: 10px 0;
+  border-bottom: 1px solid $gray-300;
+  box-shadow: 0 0 32px $warm-gray-200;
+  @include media-breakpoint-up(sm) {
+    margin-bottom: 20px;
+  }
+  @include media-breakpoint-up(lg) {
+    padding: 20px 0 0;
+    margin-bottom: 50px;
+  }
+  > .container {
+    padding: 0;
+    > .navbar {
+      padding: 0 $default-padding;
+    }
+  }
+  & + :not(.slideshow):not(.page-banner) {
+    @include media-breakpoint-down(sm) {
+      margin-top: $default-padding;
+    }
+  }
+}

@@ -1,8 +1,46 @@
-
-
-// customize some Bootstrap variables
-// i.e.: $primary: darken(#428bca, 20%);
-
-@import "~bootstrap/scss/bootstrap";
-
 @import '../../vendor/elasticms/client-helper-bundle/Resources/assets/AdminMenu/css/style';
+
+// Set the proper directory for the FontAwesome font.
+$fa-font-path: '~font-awesome/fonts';
+$fa-li-width: (15em / 16);
+
+$fonts-path:  '../fonts';
+$fa-font-path: '~font-awesome/fonts';
+
+// librairies
+@import '~bootstrap/scss/functions';
+// @import '~slick-carousel/slick/slick';
+// customize some Bootstrap variables
+@import "bootstrap-variables";
+@import "~bootstrap/scss/bootstrap";
+@import '~font-awesome/scss/font-awesome';
+
+@import "partials/mixins";
+@import "partials/fonts";
+@import "partials/caret";
+@import "partials/lists";
+@import "partials/table";
+@import "partials/collapse";
+@import "partials/links";
+@import "partials/carousel";
+@import "partials/form";
+@import "partials/datepicker";
+
+@import '~awesomplete/awesomplete.css';
+@import "partials/autocomplete";
+
+@import "partials/base";
+@import "partials/header";
+@import "partials/footer";
+@import "partials/navbar";
+@import "partials/navbar-toggler";
+
+@import "partials/menu-home";
+@import "partials/news";
+@import "partials/page";
+@import "partials/asides";
+@import "partials/filters";
+@import "partials/search-results";
+@import "partials/timeline";
+@import "partials/profile";
+@import "partials/sessions";

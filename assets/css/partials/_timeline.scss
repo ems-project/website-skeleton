@@ -1,0 +1,208 @@
+%step-done {
+  color: $primary;
+  &:before {
+    content: '';
+    width: 30px;
+    height: 30px;
+    margin: 0;
+    border: 0;
+    background-color: $primary;
+  }
+  &:after {
+    @include faw-icon($fa-var-check);
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    color: $white;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
+    text-shadow: 2px 2px 5px rgba($black, 0.4);
+    @include media-breakpoint-up(sm) {
+      margin: 0 auto;
+    }
+  }
+}
+.project-timeline {
+  h2 {
+    color: $body-color;
+  }
+  .timeline {
+    list-style: none;
+    margin: 1em 2em;
+    padding: 0;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    @include media-breakpoint-up(sm) {
+      flex-direction: row;
+      margin: 2em 0;
+    }
+    &:before {
+      content: '';
+      width: 3px;
+      height: 75%;
+      background-color: $gray-300;
+      position: absolute;
+      left: 14px;
+      top: 12.5%;
+      @include media-breakpoint-up(sm) {
+        width: 75%;
+        height: 3px;
+        top: 14px;
+        left: 12.5%;
+      }
+    }
+    &:after {
+      content: '';
+      width: 3px;
+      height: 0;
+      background-color: $primary;
+      position: absolute;
+      left: 14px;
+      top: 12.5%;
+      @include media-breakpoint-up(sm) {
+        width: 0;
+        height: 3px;
+        top: 14px;
+        left: 12.5%;
+      }
+    }
+    > li {
+      position: relative;
+      display: flex;
+      align-items: center;
+      color: $gray-600;
+      margin: .25rem 0;
+      z-index: 2;
+      @include media-breakpoint-up(sm) {
+        flex-direction: column;
+        flex: 0 0 25%;
+        max-width: 25%;
+        margin: 0;
+      }
+      p {
+        font-size: em(14);
+        margin-left: .5rem;
+        @include media-breakpoint-up(sm) {
+          margin-left: 0;
+          margin-top: .5rem;
+        }
+      }
+      &:before {
+        content: '';
+        display: block;
+        width: 14px;
+        height: 14px;
+        margin: 8px;
+        border: 2px solid $disabled-color;
+        background-color: $white;
+        border-radius: 50%;
+      }
+    }
+    &.timeline-25 {
+      li:first-child {
+        @extend %step-done;
+      }
+    }
+    &.timeline-50 {
+      li:nth-child(-n+2) {
+        @extend %step-done;
+      }
+      &:after {
+        height: 25%;
+        @include media-breakpoint-up(sm) {
+          height: 3px;
+          width: 25%;
+        }
+      }
+    }
+    &.timeline-75 {
+      li:nth-child(-n+3) {
+        @extend %step-done;
+      }
+      &:after {
+        height: 50%;
+        @include media-breakpoint-up(sm) {
+          height: 3px;
+          width: 50%;
+        }
+      }
+    }
+    &.timeline-100 {
+      li {
+        @extend %step-done;
+      }
+      &:after {
+        height: 75%;
+        @include media-breakpoint-up(sm) {
+          height: 3px;
+          width: 75%;
+        }
+      }
+    }
+  }
+}
+.step-detail {
+  margin-bottom: em(40);
+  padding-bottom: em(28);
+  border-bottom: 1px solid $border-color;
+  &:last-child {
+    border: 0;
+  }
+  h4 {
+    font-size: $font-ie-fix;
+    font-weight: bold;
+    color: $body-color;
+    margin: .25em 0 0;
+  }
+  a {
+    color: $body-color;
+    text-decoration: underline;
+    &:hover {
+      text-decoration: none;
+    }
+  }
+  .media {
+    margin: 1em 0;
+    .icon {
+      position: relative;
+      width: 40px;
+      height: 40px;
+      font-size: em(17);
+      color: $primary;
+      border: 3px solid $primary;
+      border-radius: 50%;
+      margin-right: em(20,17);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      &:before {
+        @include faw-icon($fa-var-check);
+        width: 18px;
+        height: 18px;
+        line-height: 19px;
+        font-size: 10px;
+        text-align: center;
+        color: $white;
+        text-shadow: 1px 1px 2px rgba($black, 0.4);
+        background-color: $primary;
+        border-radius: 50%;
+        position: absolute;
+        top: 0;
+        right: -11px;
+      }
+      &.disabled {
+        border-color: $disabled-color;
+        color: $disabled-color;
+        &:before {
+          content: none;
+          display: none;
+        }
+      }
+    }
+  }
+}

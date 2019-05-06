@@ -1,0 +1,52 @@
+aside {
+  padding: 20px $default-padding;
+  margin-left: -15px;
+  margin-right: -15px;
+  @include media-breakpoint-up(sm) {
+    margin-bottom: $default-padding;
+  }
+  @include media-breakpoint-up(lg) {
+    margin-left: 0;
+    margin-right: 0;
+    margin-bottom: $grid-gutter-width;
+  }
+  &:last-child {
+    margin-bottom: $grid-gutter-width;
+  }
+  .aside-header {
+    font-size: em(18);
+    font-weight: bold;
+    text-transform: uppercase;
+    color: $body-color;
+    margin-bottom: 1rem;
+  }
+  a {
+    text-decoration: underline;
+    &:hover,
+    &:focus {
+      text-decoration: none;
+    }
+  }
+  &.aside-default {
+    background-color: $warm-gray-200;
+    color: $body-color;
+    .aside-header,
+    a {
+      color: $body-color;
+    }
+  }
+  &.aside-primary {
+    background-color: $primary;
+    color: $white;
+    .aside-header,
+    a {
+      color: $white;
+    }
+  }
+  dl {
+    margin: 1.5rem 0 0;
+  }
+  dd:not(:last-child) {
+    margin-bottom: 1.5rem;
+  }
+}

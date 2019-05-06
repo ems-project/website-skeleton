@@ -1,0 +1,157 @@
+.carousel-nav {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 45px;
+  z-index: 15;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  @include media-breakpoint-up(lg) {
+    left: auto;
+    right: 42px;
+  }
+}
+.carousel-pause {
+  font-size: em(12);
+  text-transform: uppercase;
+  color: $body-color;
+  &:after {
+    @include faw-icon($fa-var-pause);
+    margin-left: .5em;
+  }
+  &.active {
+    &:after {
+      @include faw-icon($fa-var-play);
+    }
+  }
+}
+.carousel-indicators {
+  position: relative;
+  left: auto;
+  right: auto;
+  bottom: auto;
+  margin: 0;
+  margin-left: 2rem;
+  li {
+    width: auto;
+    height: auto;
+    margin: 0 .5em;
+    background-color: transparent;
+    a {
+      display: block;
+      width: 12px;
+      height: 12px;
+      border: 1px solid transparent;
+      border-radius: 50%;
+      background-color: $warm-gray-500;
+      transition: all .3s ease-in-out;
+      
+    }
+    &.active {
+      background-color: transparent;
+      a {
+        background-color: $gray-900;
+        border-color: $gray-900;
+      }
+    }
+    &:before,
+    &:after {
+      content: none;
+    }
+  }
+}
+.carousel-control {
+  z-index: 5;
+  bottom: 45px;
+  display: none;
+}
+.carousel {
+  padding: 0 0 45px;
+  @include media-breakpoint-up(lg) {
+    padding: 0 $default-padding;
+  }
+  .carousel-item {
+    align-items: flex-end;
+    justify-content: flex-start;
+    background-color: $primary;
+    @include media-breakpoint-up(lg) {
+      background: none;
+    }
+    img {
+      display: block;
+      width: 100%;
+      padding: 0 0 70px;
+      @include media-breakpoint-up(lg) {
+        padding: 0 42px 45px;
+      }
+    }
+    .carousel-caption {
+      right: 0;
+      bottom: 0;
+      left: 0;
+      padding: 0;
+      min-height: 70px;
+      @include media-breakpoint-up(lg) {
+        position: absolute;
+        right: auto;
+        max-width: 50%;
+      }
+      > a {
+        display: block;
+        color: $white;
+        background-color: $primary;
+        padding: $default-padding;
+        text-align: left;
+        @include media-breakpoint-up(lg) {
+          padding: 1.5em;
+        }
+        &:hover {
+          text-decoration: none;
+          background-color: darken($primary, 5%);
+        }
+      }
+      h1,
+      h2 {
+        display: inline;
+        font-size: em(28);
+        margin: 0;
+        vertical-align: middle;
+        color: $white;
+        @include media-breakpoint-up(lg) {
+          font-size: 2em;
+        }
+      }
+      .label-video {
+        color: $primary;
+        display: inline-block;
+        vertical-align: middle;
+        margin-left: 1rem;
+        span {
+          display: inline-block;
+          background-color: $white;
+          font-size: em(12);
+          line-height: em(18,12);
+          height: em(18,12);
+          font-weight: bold;
+          padding: .1em .5em 0;
+          text-transform: uppercase;
+          color: $primary;
+          display: inline-block;
+          vertical-align: middle;
+        }
+        &:before {
+          @include faw-icon($fa-var-video-camera);
+          background: white;
+          padding: 5px;
+          border-radius: 50%;
+          font-size: 14px;
+          margin-right: em(10,14);
+        }
+      }
+    }
+  }
+}
+
+

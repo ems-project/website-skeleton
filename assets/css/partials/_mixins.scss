@@ -1,0 +1,62 @@
+$browser-context: 16; // Default
+
+@function em($pixels, $context: $browser-context) {
+  @return #{$pixels/$context}em;
+}
+
+@function strip-units($number) {
+  @return $number / ($number * 0 + 1);
+}
+
+@mixin faw-icon($fa-icon,$size:$browser-context) {
+  content: $fa-icon;
+  @include fa-icon;
+  font-size: em($size);
+}
+
+@mixin fontface($name, $file, $weight: normal, $style: normal){
+  @font-face {
+    font-family: '#{$name}';
+    src: url('#{$file}.woff2') format('woff2'),
+         url('#{$file}.woff') format('woff');
+    font-weight: $weight;
+    font-style: $style;
+  }
+}
+
+@mixin link-deco($decoration: underline) {
+  @if $decoration == 'none' {
+    a {
+      text-decoration: $decoration;
+      &:hover {
+        text-decoration: underline;
+      }
+      // IE fix for underlined pseudo classes
+      &:before,
+      &:after {
+        text-decoration: $decoration;
+      }
+      &:before,
+      &:after {
+        text-decoration: underline;
+      }
+    }
+  } @else {
+    a {
+      text-decoration: $decoration;
+      &:hover {
+        text-decoration: none;
+      }
+      // IE fix for underlined pseudo classes
+      &:before,
+      &:after {
+        text-decoration: $decoration;
+      }
+      &:before,
+      &:after {
+        text-decoration: none;
+      }
+    }
+
+  }
+}

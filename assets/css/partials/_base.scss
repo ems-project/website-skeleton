@@ -1,0 +1,48 @@
+a {
+  &:focus {
+    outline-color: $input-focus-border-color;
+  }
+}
+h1, .h1 {
+  font-size: em(32);
+  line-height: em(34,32);
+  color: $primary;
+  margin-bottom: 1.5rem;
+}
+h2, .h2 {
+  font-size: em(28);
+  color: $primary;
+}
+h3, .h3 {
+  font-size: em(22);
+  font-weight: bold;
+}
+h4, .h4 {
+  color: $warm-gray-600;
+  font-size: em(18);
+  line-height: 1.5;
+  font-weight: normal;
+}
+
+p:last-child {
+  margin-bottom: 0;
+}
+
+.jumbotron {
+  border-radius: 0;
+  padding-left: $jumbotron-padding;
+  padding-right: $jumbotron-padding;
+  padding-bottom: $jumbotron-padding;
+  .form-control {
+    border-color: $gray-600;
+  }
+  .text-muted {
+    color: $body-color;
+  }
+}
+
+// Microsoft rendering 16px semibold FIX
+strong,
+dt {
+  font-size: $font-ie-fix;
+}

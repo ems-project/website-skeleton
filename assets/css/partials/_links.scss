@@ -1,0 +1,23 @@
+.page-body,
+.list-group-item {
+  [href*=".pdf"] { 
+    &:before {
+      @include faw-icon($fa-var-file-pdf-o);
+      font-size: .8em;
+      margin: 0 em(5) 0 em(2);
+    }
+  }
+  [href*="youtube"] {
+    &:before {
+      @include faw-icon($fa-var-youtube-play);
+      font-size: .8em;
+      margin: 0 em(5) 0 em(2);
+    }
+  }
+}
+.page-body {
+  @include link-deco();
+}
+.list-group-item {
+  @include link-deco(none);
+}

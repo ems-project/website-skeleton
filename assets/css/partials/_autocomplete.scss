@@ -1,0 +1,37 @@
+.input-group {
+  div.awesomplete {
+    position: relative;
+    width: 100%;
+    flex: 1 1 auto;
+    width: 1%;
+    .form-control:not(:last-child) {
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
+    }
+  }
+}
+/* ================================================ */
+.awesomplete {
+  mark {
+    padding: 0;
+    background-color: transparent;
+    color: $primary;
+    font-weight: bold;
+  }
+  > ul {
+    font-size: em(14);
+    > li {
+      border-top: 1px solid $border-color;
+      padding: 0.5rem 0.75rem;
+      &:first-child {
+        border: 0;
+      }
+      &[aria-selected="true"] {
+        background-color: $primary;
+        mark {
+          background-color: transparent;
+        }
+      }
+    }
+  }
+}

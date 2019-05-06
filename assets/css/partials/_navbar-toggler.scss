@@ -1,0 +1,78 @@
+$thickness: 4px;
+$spacing: 4px;
+$middle-position: $thickness + $spacing;
+.navbar-toggler {
+  width: 24px;
+  height: 20px;
+  border-radius: 0;
+  padding: 0;
+  position: relative;
+  transform: rotate(0deg);
+  transition: .5s ease-in-out;
+  cursor: pointer;
+  border: 0;
+  margin-left: 1em;
+  @include media-breakpoint-up(sm) {
+    margin-left: 2em;
+  }
+  .navbar-toggler-item {
+    display: block;
+    position: absolute;
+    height: $thickness;
+    width: 100%;
+    background: $primary;
+    opacity: 1;
+    left: 0;
+    transform: rotate(0deg);
+    transition: .25s ease-in-out;
+    &:nth-child(1),
+    &:nth-child(2) {
+      top: $middle-position;
+    }
+    &:nth-child(3) {
+      top: 0;
+    }
+    &:nth-child(4) {
+      top: $middle-position*2;
+    }
+  }
+  &[aria-expanded="true"] {
+    .navbar-toggler-item {
+      &:nth-child(1) {
+        transform: rotate(45deg);
+      }
+      &:nth-child(2) {
+        transform: rotate(-45deg);
+      }
+      &:nth-child(3),
+      &:nth-child(4) {
+        top: $middle-position;
+        width: 0%;
+        left: 50%;
+      }
+    }
+  }
+}
+.search-toggler {
+  .navbar-toggler-item {
+    opacity: 0;
+  }
+  .fa {
+    opacity: 1;
+    position: absolute;
+    top: -2px;
+    left: 0;
+    width: 100%;
+    font-size: 24px;
+    height: 20px;
+  }
+  &[aria-expanded="true"] {
+    .navbar-toggler-item {
+      opacity: 1;
+    }
+    .fa-search {
+      width: 0%;
+      opacity: 0;
+    }
+  }
+}

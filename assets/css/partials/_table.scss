@@ -1,0 +1,18 @@
+.table {
+  thead {
+    th {
+      background-color: $table-head-bg;
+      border-bottom-width: $table-border-width;
+      vertical-align: middle;
+    }
+  }
+  &.table-bordered {
+    th, td {
+      border: 0;
+      border-bottom: $table-border-width solid $table-border-color;
+    }
+  }
+  caption {
+    font-size: em(14);
+  }
+}

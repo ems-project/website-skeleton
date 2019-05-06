@@ -1,0 +1,24 @@
+.session {
+  padding-top: 1.5rem;
+  padding-bottom: 2.5rem;
+  h3 {
+    margin-top: 2em;
+    &:first-child {
+      margin-top: 0;
+    }
+    & + h4 {
+      margin-top: 0;
+    }
+  }
+  h4 {
+    color: $body-color;
+    font-weight: bold;
+    margin-top: 2em;
+    margin-bottom: 0;
+  }
+  & + .session {
+    border-top: 2px solid $body-color;
+    padding-top: 2.5rem;
+    padding-bottom: 0.75em;
+  }
+}

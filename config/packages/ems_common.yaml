@@ -1,11 +1,9 @@
 parameters:
-    env(EMS_PROFILER): false
     env(EMS_HASH_ALGO): 'sha1'
     env(STORAGE_PATH): '../var/assets'
     env(EMSCH_BACKEND_URL): ~
 
 ems_common:
-    profiler: '%env(bool:EMS_PROFILER)%'
     hash_algo: '%env(string:EMS_HASH_ALGO)%'
     storage_path: '%env(string:STORAGE_PATH)%'
     backend_url: '%env(string:EMSCH_BACKEND_URL)%'

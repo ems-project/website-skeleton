@@ -1,0 +1,36 @@
+fieldset.form-group {
+  border-top: 1px solid $border-color;
+  padding: $default-padding;
+  margin: 0;
+  &:first-child {
+    border: 0;
+  }
+  h3.legend {
+    font-size: $font-ie-fix;
+    font-weight: bold;
+  }
+}
+.form-group {
+  position: relative;
+  .control-label, // labels
+  .form-control,  //input
+  .custom-control,// radio & check
+  .custom-select, // select
+  .form-text {    // help text
+    font-size: em(14);
+  }
+  .control-label {
+    margin-bottom: 0.3rem;
+  }
+  .form-control,  //input
+  .custom-select {
+    height: $input-height;
+    color: $body-color;
+  }
+  .custom-select {
+    &:disabled {
+      color: $custom-select-disabled-color;
+      background-image: $custom-select-disabled-indicator;
+    }
+  }
+}

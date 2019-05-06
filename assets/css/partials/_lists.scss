@@ -1,0 +1,19 @@
+ul:not(.nav):not(.navbar-nav):not(.list-inline):not(.list-group):not(.tags-group):not(.dropdown-menu):not(.timeline):not([role="listbox"]) {
+  padding: 0;
+  list-style-type: none;
+  li {
+    margin-bottom: em(6);
+    padding-left: $fa-li-width;
+    &:before {
+      width: $fa-li-width;
+      margin-left: -$fa-li-width;
+      @include faw-icon($fa-var-angle-right);
+    }
+  }
+}
+
+ul.list-links {
+  li {
+    color: $primary;
+  }
+}

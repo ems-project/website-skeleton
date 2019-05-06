@@ -1,0 +1,42 @@
+.filters-active {
+  .tags-group {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    padding: 0;
+    margin: .5rem 0;
+    .tag-item {
+      background-color: $white;
+      color: $body-color;
+      display: block;
+      margin: 0 em(12) em(12) 0;
+      font-size: em(14);
+      line-height: em(30,15);
+      padding: 1px .5em;
+      border-radius: .25em;
+      a {
+        margin-left: .25em;
+        padding: 0 .25em;
+        color: $body-color;
+        display: inline-block;
+        text-decoration: none;
+        line-height: 1rem;
+      }
+    }
+  }
+}
+.filters {
+  padding: 0;
+  .aside-header,
+  .aside-footer {
+    padding: $default-padding;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0;
+  }
+  .aside-body {
+    border-top: 2px solid $body-color;
+    border-bottom: 2px solid $body-color;
+  }
+}

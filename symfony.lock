@@ -1,10 +1,4 @@
 {
-    "aws/aws-sdk-php": {
-        "version": "3.90.8"
-    },
-    "composer/ca-bundle": {
-        "version": "1.1.2"
-    },
     "doctrine/annotations": {
         "version": "1.0",
         "recipe": {
@@ -115,9 +109,6 @@
     },
     "monolog/monolog": {
         "version": "1.23.0"
-    },
-    "mtdowling/jmespath.php": {
-        "version": "2.4.0"
     },
     "nikic/php-parser": {
         "version": "v4.0.2"

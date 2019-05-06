@@ -1,0 +1,270 @@
+.navbar {
+  position: relative;
+  align-items: center;
+  padding: 0;
+  @include media-breakpoint-up(lg) {
+    flex-wrap: wrap;
+    align-items: flex-start;
+  }
+  // general
+  .nav-item {
+    .nav-link {
+      color: $body-color;
+      padding: 10px;
+      border-bottom: 1px solid $border-color;
+    }
+  }
+  .dropdown-menu {
+    border: 0;
+    border-radius: 0;
+    margin: 1px 0 0;
+    padding: 0;
+    border: 1px solid $border-color;
+    @include media-breakpoint-up(md) {
+      min-width: 20rem;
+    }
+    .dropdown-item {
+      padding: 10px $default-padding;
+      border-bottom: 1px solid $border-color;
+      color: $green;
+      white-space: normal;
+      &:hover,
+      &:focus,
+      &:active {
+        color: darken($green,5%);
+        background-color: darken($white,5%);
+      }
+      &.active-dropdown {
+        color: $white;
+        background-color: $primary;
+        border-color: transparent;
+      }
+    }
+  }
+  .navbar-collapse {
+    margin-top: 11px;
+    background: $white;
+    @include media-breakpoint-down(md) {
+      position: absolute;
+      width: 100%;
+      left: 0;
+      top: 100%;
+      z-index: 100;
+      box-shadow: $box-shadow-down;
+    }
+    @include media-breakpoint-up(lg) {
+      margin: 0;
+      width: 100%;
+      &#search-mobile {
+        display: none !important;
+      }
+    }
+    // lvl1
+    .navbar-nav {
+      > .nav-item {
+        @include media-breakpoint-up(lg) {
+          margin-right: em(50);
+          .nav-link {
+            padding: 1.25em 0 .75em;
+            border-bottom: 5px solid transparent;
+            transition: border-color .2s;
+            &:hover,
+            &:focus {
+              border-color: rgba($primary,.5);
+              outline-offset: 2px;
+            }
+            &.dropdown-toggle {
+              padding-right: 2px;
+            }
+          }
+          &.active,
+          &.show {
+            .nav-link {
+              border-color: $primary;
+            }
+          }
+        }
+        @include media-breakpoint-down(md) {
+          &.dropdown {
+            .dropdown-toggle {
+              position: relative;
+              &::after {
+                position: absolute;
+                right: 10px;
+                top: 50%;
+                margin-top: -5px;
+              }
+            }
+          }
+        }
+      }
+    }
+    .dropdown-menu {
+      margin: 1px 0 0;
+      border: 0;
+      @include media-breakpoint-up(lg) {
+        box-shadow: $box-shadow-down;
+      }
+      // lvl2
+      .dropdown-item {
+        padding: 7px 10px;
+        &.active-dropdown {
+          color: $white;
+          background-color: $primary;
+          border-color: transparent;
+        }
+        &.dropdown-toggle {
+          position: relative;
+          padding-right: 1.8rem;
+          &::after {
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            margin-top: -5px;
+          }
+        }
+      }
+      @include media-breakpoint-up(lg) {
+        .show {
+          .dropdown-toggle {
+            &::after {
+              transform: rotate(45deg);
+              vertical-align: 0.2em;
+            }
+          }
+        }
+      }
+      // lvl3
+      .dropdown-menu {
+        margin: 0;
+        .dropdown-item {
+          color: $white;
+          background-color: $primary;
+          border-color: $primary-dark;
+          &:hover,
+          &:focus,
+          &:active {
+            background-color: darken($primary,5%);
+          }
+          &:focus {
+            outline-color: $black;
+          }
+          &.active-dropdown {
+            background-color: $primary-dark;
+          }
+        }
+        // lvl4
+        .dropdown-menu {
+          background-color: $primary-dark;
+          @include media-breakpoint-down(md) {
+            padding: 0 25px;
+          }
+          // lvl4
+          .dropdown-item {
+            background-color: $primary-dark;
+            border-color: $primary-darker;
+            &:hover,
+            &:focus,
+            &:active {
+              background-color: darken($primary-dark,5%);
+            }
+          }
+        }
+      }
+      // .dropdown-item {
+      //   color: red;
+      // }
+    }
+  }
+  .navbar-brand {
+    display: block;
+    padding: 0;
+    img {
+      width: auto;
+      height: 26px;
+      vertical-align: text-bottom;
+      @include media-breakpoint-up(lg) {
+        height: 40px;
+      }
+    }
+  }
+  .nav-search {
+    margin-right: em(50);
+    .form-control,
+    .dropdown {
+      font-size: em(14);
+      color: $body-color;
+    }
+    .input-group {
+      border-bottom: 1px solid $input-border-color;
+      padding-bottom: em(4);
+      margin-bottom: em(10);
+      .form-control,
+      .btn {
+        border: 0;
+        border-radius: 0;
+        padding: 0;
+      }
+      .form-control::placeholder {
+        color: $body-color;
+      }
+      .btn {
+        background-color: $white;
+        color: $primary;
+        margin-left: 1em;
+      }
+    }
+  }
+  .nav-lang {
+    font-size: em(14);
+    margin: .25em 0;
+    .dropdown-menu {
+      min-width: 0;
+    }
+  }
+  .nav-search, 
+  .nav-lang {
+    a.dropdown-toggle {
+      color: $body-color;
+    }
+    a.dropdown-item {
+      font-size: em(14);
+      color: $green;
+      &:hover,
+      &:focus,
+      &:active {
+        background-color: $green;
+        color: $white;
+      }
+      &:last-child {
+        border: 0;
+      }
+    }
+  }
+  // mobile
+  .navbar-toggler {
+    color: $primary;
+  }
+
+  .advanced-search-mobile {
+    .dropdown-toggle {
+      text-align: right;
+      display: block;
+      font-size: .875em;
+      color: $gray-900;
+      padding: 0 1.5rem 1.5rem 1.5rem;
+    }
+    .navbar-nav {
+      border-top: 1px solid $border-color;
+    }
+    .nav-link {
+      color: $primary;
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
+      &:hover, &:focus, &.active {
+        background-color: $primary;
+        color: $white;
+      }
+    }
+  }
+}

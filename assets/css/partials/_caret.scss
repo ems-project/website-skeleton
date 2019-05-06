@@ -1,0 +1,85 @@
+// display caret as an angle ^>v< :)
+@mixin caret-down {
+  transform: rotate(45deg);
+}
+
+@mixin caret-up {
+  transform: rotate(-135deg);
+}
+
+@mixin caret-right {
+  transform: rotate(-45deg);
+}
+
+@mixin caret-left {
+  transform: rotate(135deg);
+}
+
+@mixin caret($direction: down) {
+  @if $enable-caret {
+    &::after {
+      content: "";
+      display: inline-block;
+      width: 0;
+      height: 0;
+      margin-left: $caret-width*2;
+      vertical-align: $caret-width;
+      border-top: 0;
+      border-right: $caret-width/2 solid;
+      border-bottom: $caret-width/2 solid;
+      border-left: 0;
+      padding: $caret-width;
+      transition: transform .2s;
+      @if $direction == down {
+        @include caret-down;
+      } @else if $direction == up {
+        @include caret-up;
+      } @else if $direction == right {
+        @include caret-right;
+      }
+    }
+
+    @if $direction == left {
+      &::after {
+        display: none;
+      }
+
+      &::before {
+        display: inline-block;
+        width: 0;
+        height: 0;
+        margin-right: $caret-width * .85;
+        vertical-align: $caret-width * .85;
+        content: "";
+        @include caret-left;
+      }
+    }
+
+    &:empty::after {
+      margin-left: 0;
+    }
+  }
+}
+
+.dropdown-toggle {
+  // Generate the caret automatically
+  @include caret;
+  transition: all .2s;
+  &[aria-expanded="true"] {
+    position: relative;
+    &::after {
+      transform: rotate(-45deg) scale(1,-1);
+      vertical-align: 0;
+    }
+  }
+}
+.dropdown-menu {
+  .show {
+    > .dropdown-toggle {
+      &::after {
+        transform: rotate(-45deg) scale(1,-1);
+        vertical-align: 0;
+      }
+    }
+  }
+}
